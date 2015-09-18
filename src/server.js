@@ -11,7 +11,6 @@ const port = process.env.PORT || 8080
 const router = express.Router()
 
 router.use((req, res, next) => {
-  console.log(req.query)
   next()
 })
 
@@ -29,6 +28,26 @@ router.get('/search', (req, res) => {
     res.send('fuck')
   }
 })
+
+
+router.get('/count', (req, res) => {
+  try {
+    getLab().then(arr => {
+      let output = arr
+      .map(e=> e.lab)
+      .reduce((sum, x) => {
+        sum[x] = sum[x] + 1 || 1
+        return sum
+      }, {})
+
+      console.log(output)
+      res.json(output)
+    })
+  } catch (e) {
+    res.send('fuck')
+  }
+})
+
 
 app.use('/api/v1', router)
 

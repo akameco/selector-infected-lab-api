@@ -17,8 +17,7 @@ export default function getLab() {
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
           const $ = cheerio.load(body);
-          const main = $('table.entry_table tr')
-          main.each((i,e) => {
+          $('table.entry_table tr').each((i,e) => {
             let obj = {}
             const td = $(e).children()
             obj['id'] = $(td[0]).text()
@@ -26,6 +25,7 @@ export default function getLab() {
             obj['lab'] = $(td[2]).text()
             arr.push(obj)
           })
+          arr.shift()
           resolve(arr)
         } else {
           reject('miss')
@@ -33,10 +33,3 @@ export default function getLab() {
       })
   })
 }
-
-// getLab().then(arr => {
-  // let a = arr.filter(e => {
-    // return e.id === testId
-  // })[0]
-  // console.log(a.lab)
-// })

@@ -6,7 +6,8 @@
 - [https://tdu13fi.herokuapp.com/api/v1/count](https://tdu13fi.herokuapp.com/api/v1/count)
 
 ### 学籍番号
-???
+???に学籍番号を入力
+
 - [https://tdu13fi.herokuapp.com/api/v1/search?id=???](https://tdu13fi.herokuapp.com/api/v1/search?id=???)
 
 ## Usage

@@ -1,6 +1,6 @@
 tdufizemi:
   build: .
   ports:
-    - "80:8080"
+    - "8080:8080"
   env_file:
     - .env

@@ -1,4 +1,6 @@
 # 研究室希望API
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/akameco/selector-infected-lab-api.svg)](https://greenkeeper.io/)
 研究室の希望情報のJSONを返します
 
 ## API
